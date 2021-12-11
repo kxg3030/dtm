@@ -76,6 +76,6 @@ func handlePanic(perr *error) {
 func sleepCronTime() {
 	normal := time.Duration((float64(config.TransCronInterval) - rand.Float64()) * float64(time.Second))
 	interval := dtmimp.If(CronForwardDuration > 0, 1*time.Millisecond, normal).(time.Duration)
-	dtmimp.Logf("sleeping for %v milli", interval/time.Microsecond)
+	//dtmimp.Logf("sleeping for %v milli", interval/time.Microsecond)
 	time.Sleep(interval)
 }

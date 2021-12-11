@@ -54,6 +54,7 @@ func qsAdjustBalance(uid int, amount int) (interface{}, error) {
 }
 
 func qsAddRoute(app *gin.Engine) {
+	// saga
 	app.POST(qsBusiAPI+"/TransIn", common.WrapHandler(func(c *gin.Context) (interface{}, error) {
 		return qsAdjustBalance(2, 30)
 	}))
@@ -66,4 +67,8 @@ func qsAddRoute(app *gin.Engine) {
 	app.POST(qsBusiAPI+"/TransOutCompensate", common.WrapHandler(func(c *gin.Context) (interface{}, error) {
 		return qsAdjustBalance(1, 30)
 	}))
+
+	// tcc
+
+	// msg
 }

@@ -70,14 +70,14 @@ func (op *tracePlugin) Initialize(db *gorm.DB) (err error) {
 	}
 
 	after := func(db *gorm.DB) {
-		_ts, _ := db.InstanceGet("ivy.startTime")
-		sql := db.Dialector.Explain(db.Statement.SQL.String(), db.Statement.Vars...)
-		dtmimp.Logf("used: %d ms affected: %d sql is: %s", time.Since(_ts.(time.Time)).Milliseconds(), db.RowsAffected, sql)
-		if v, ok := db.InstanceGet("ivy.must"); ok && v.(bool) {
-			if db.Error != nil && db.Error != gorm.ErrRecordNotFound {
-				panic(db.Error)
-			}
-		}
+		//_ts, _ := db.InstanceGet("ivy.startTime")
+		//sql := db.Dialector.Explain(db.Statement.SQL.String(), db.Statement.Vars...)
+		//dtmimp.Logf("used: %d ms affected: %d sql is: %s", time.Since(_ts.(time.Time)).Milliseconds(), db.RowsAffected, sql)
+		//if v, ok := db.InstanceGet("ivy.must"); ok && v.(bool) {
+		//	if db.Error != nil && db.Error != gorm.ErrRecordNotFound {
+		//		panic(db.Error)
+		//	}
+		//}
 	}
 
 	beforeName := "cb_before"
