@@ -66,7 +66,6 @@ func main() {
 		bench.StartSvr()
 	case "dev", "dtmsvr":
 	default:
-
 	}
 	select {}
 }
